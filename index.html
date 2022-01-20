@@ -5,17 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dischi php</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     
     <div id="app">
-        <ul>
+
+        <!-- <ul>
             <li v-for="disco in dischi">
                 {{disco}}
             </li>
-        </ul>
+        </ul> -->
+        <header>
+            <img src="./img/logo-spotify.png" alt="logo spotify">
+        </header>
+
+        <main>
+            <div class="container">
+                <!-- <div class="select-genres">
+                    <form action="">
+                        <select v-model="selectVal" name="" id="" @change="$emit('select', selectVal)">
+                            <option value="">Seleziona un genere</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Metal">Metal</option>
+                        </select>
+                    </form>
+                </div> -->
+
+              <!-- <SelectGenres @select="selectGenre"/> -->
+              <div class="discs-list">
+                <div class="disc-card" v-for="disco in dischi">
+                    <div class="img-container">
+                        <img :src="disco.poster" :alt="disco.title">
+                    </div>
+                    <h2>{{disco.title}}</h2>
+                    <h3>{{disco.author}}</h3>
+                    <h3>{{disco.year}}</h3>
+                </div>
+                <!-- <DiscCard v-for="(disc, index) in discsFiltered" :key="index" :disc="disc"/> -->
+              </div>
+            </div>
+        </main>
+
     </div>
 
 
